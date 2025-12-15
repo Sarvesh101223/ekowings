@@ -1,0 +1,362 @@
+/* Base Styles */
+.enrichment-climbing {
+    width: 100%;
+    background: #E0E0D2;
+}
+
+.enrichment-climbing-wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 5rem 0 0;
+}
+
+.enrichment-climbing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.enrichment-climbing-content {
+    width: calc(50% - 1rem);
+}
+
+.enrichment-climbing-content h2 {
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.enrichment-climbing-content h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.enrichment-climbing-content h4 {
+    margin-top: 5rem;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.enrichment-climbing-content p {
+    margin-top: 1rem;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 80%;
+}
+
+.enrichment-climbing-img-container {
+    position: relative;
+    width: calc(45% - 1rem);
+}
+
+.enrichment-climbing-img {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.enrichment-climbing-img img {
+    width: 100%;
+    max-width: 510px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.enrichment-climbing-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.enrichment-climbing-img:hover::before {
+    animation: shineIn 0.6s forwards;
+}
+
+@keyframes shineIn {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
+}
+
+.enrichment-climbing-img:hover img {
+    transform: scale(1.02);
+}
+
+.enrichment-climbing-label {
+    position: absolute;
+    top: calc(65% - -1rem);
+    right: -1.7rem;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.enrichment-climbing-img-container:has(.enrichment-climbing-img:hover) .enrichment-climbing-label {
+    transform: translateX(0.5rem);
+}
+
+.enrichment-climbing-img-container:has(.enrichment-climbing-img:hover) .enrichment-climbing-label p {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .enrichment-climbing-wrapper {
+        width: 90%;
+        padding: 4rem 0 0;
+    }
+
+    .enrichment-climbing-container {
+        margin-bottom: 4rem;
+    }
+
+    .enrichment-climbing-content h2 {
+        font-size: 52px;
+    }
+
+    .enrichment-climbing-content h3 {
+        font-size: 28px;
+    }
+
+    .enrichment-climbing-content h4 {
+        margin-top: 4rem;
+        font-size: 22px;
+    }
+
+    .enrichment-climbing-content p {
+        width: 90%;
+    }
+
+    .enrichment-climbing-img img {
+        max-width: 450px;
+    }
+
+    .enrichment-climbing-label {
+        right: -2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .enrichment-climbing-wrapper {
+        padding: 3.5rem 0 0;
+    }
+
+    .enrichment-climbing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .enrichment-climbing-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .enrichment-climbing-content h2 {
+        font-size: 46px;
+    }
+
+    .enrichment-climbing-content h3 {
+        font-size: 26px;
+    }
+
+    .enrichment-climbing-content h4 {
+        margin-top: 3rem;
+        font-size: 20px;
+    }
+
+    .enrichment-climbing-content p {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .enrichment-climbing-img-container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .enrichment-climbing-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .enrichment-climbing-img img {
+        max-width: 400px;
+    }
+
+    .enrichment-climbing-label {
+        right: auto;
+        left: 50%;
+        top: calc(65% + 1rem);
+        transform: translateX(-50%);
+    }
+
+    .enrichment-climbing-img-container:has(.enrichment-climbing-img:hover) .enrichment-climbing-label {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .enrichment-climbing-wrapper {
+        width: 90%;
+        padding: 3rem 0 0;
+    }
+
+    .enrichment-climbing-container {
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .enrichment-climbing-content h2 {
+        font-size: 40px;
+        margin-bottom: 0.3rem;
+    }
+
+    .enrichment-climbing-content h3 {
+        font-size: 22px;
+    }
+
+    .enrichment-climbing-content h4 {
+        margin-top: 2.5rem;
+        font-size: 18px;
+    }
+
+    .enrichment-climbing-content p {
+        font-size: 16px;
+    }
+
+    .enrichment-climbing-img-container {
+        width: 70%;
+    }
+
+    .enrichment-climbing-img img {
+        max-width: 350px;
+    }
+
+    .enrichment-climbing-label {
+        top: calc(65% + 0.8rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .enrichment-climbing-wrapper {
+        width: 92%;
+        padding: 2.5rem 0 0;
+    }
+
+    .enrichment-climbing-container {
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .enrichment-climbing-content {
+        text-align: left;
+    }
+
+    .enrichment-climbing-content h2 {
+        font-size: 34px;
+        margin-bottom: 0.2rem;
+    }
+
+    .enrichment-climbing-content h3 {
+        font-size: 18px;
+    }
+
+    .enrichment-climbing-content h4 {
+        margin-top: 2rem;
+        font-size: 16px;
+    }
+
+    .enrichment-climbing-content p {
+        font-size: 15px;
+    }
+
+    .enrichment-climbing-img-container {
+        width: 85%;
+        align-items: flex-start;
+    }
+
+    .enrichment-climbing-img {
+        justify-content: flex-start;
+    }
+
+    .enrichment-climbing-img img {
+        max-width: 100%;
+    }
+
+    .enrichment-climbing-label {
+        left: auto;
+        right: -2rem;
+        top: calc(65% + 1rem);
+        transform: translateX(0);
+    }
+
+    .enrichment-climbing-img-container:has(.enrichment-climbing-img:hover) .enrichment-climbing-label {
+        transform: translateX(0.3rem);
+    }
+}
+
+@media (max-width: 400px) {
+    .enrichment-climbing-wrapper {
+        padding: 2rem 0 0;
+    }
+
+    .enrichment-climbing-container {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .enrichment-climbing-content h2 {
+        font-size: 28px;
+    }
+
+    .enrichment-climbing-content h3 {
+        font-size: 16px;
+    }
+
+    .enrichment-climbing-content h4 {
+        margin-top: 1.5rem;
+        font-size: 15px;
+    }
+
+    .enrichment-climbing-content p {
+        font-size: 14px;
+    }
+
+    .enrichment-climbing-img-container {
+        width: 100%;
+    }
+
+    .enrichment-climbing-label {
+        right: 0;
+        top: calc(65% + 0.5rem);
+    }
+
+    .enrichment-climbing-img-container:has(.enrichment-climbing-img:hover) .enrichment-climbing-label {
+        transform: translateX(0.3rem);
+    }
+}

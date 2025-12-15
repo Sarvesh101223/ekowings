@@ -1,0 +1,182 @@
+/* ============================
+   COMMON OFFERS SECTION
+   ============================ */
+.enrichment-offers {
+    width: 100%;
+}
+
+.enrichment-offers-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.enrichment-offers-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.enrichment-offer {
+    position: relative;
+    width: 33.33%;
+}
+
+.enrichment-offer::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 2rem;
+    width: 0;
+    height: 14rem;
+    border-right: 1px dashed #7E7E7E;
+}
+
+.enrichment-offer:nth-child(3)::after {
+    display: none;
+}
+
+.enrichment-offer h3 {
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 70px;
+    margin-bottom: 1rem;
+}
+
+.enrichment-offer:nth-child(3) h3 {
+    width: 100%;
+}
+
+.enrichment-offer-points {
+    margin-left: 1.5rem;
+    list-style: none;
+}
+
+.enrichment-offer-points li {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.enrichment-offers-title {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.enrichment-offers-desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    width: 55%;
+}
+
+/* ============================
+   OFFERS MEDIA QUERIES
+   ============================ */
+@media (max-width: 1280px) {
+    .enrichment-offers-wrapper {
+        width: 90%;
+    }
+
+    .enrichment-offer h3 {
+        font-size: 20px;
+        width: 70%;
+    }
+
+    .enrichment-offers-desc {
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .enrichment-offers-container {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .enrichment-offer {
+        width: 45%;
+    }
+
+    .enrichment-offer::after {
+        display: none;
+    }
+
+    .enrichment-offer:nth-child(1)::after {
+        display: block;
+        right: -1rem;
+    }
+
+    .enrichment-offer h3 {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .enrichment-offers-desc {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .enrichment-offers-wrapper {
+        padding: 3rem 0;
+    }
+
+    .enrichment-offers-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .enrichment-offer {
+        width: 100%;
+    }
+
+    .enrichment-offer::after,
+    .enrichment-offer:nth-child(1)::after {
+        display: none;
+    }
+
+    .enrichment-offer h3 {
+        font-size: 20px;
+    }
+
+    .enrichment-offers-title {
+        font-size: 20px;
+    }
+
+    .enrichment-offers-desc {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .enrichment-offers-wrapper {
+        width: 92%;
+        padding: 2.5rem 0;
+    }
+
+    .enrichment-offer h3 {
+        font-size: 18px;
+    }
+
+    .enrichment-offer-points {
+        margin-left: 1rem;
+    }
+
+    .enrichment-offer-points li {
+        font-size: 15px;
+        margin-bottom: 0.8rem;
+    }
+
+    .enrichment-offers-title {
+        font-size: 18px;
+    }
+
+    .enrichment-offers-desc {
+        font-size: 15px;
+    }
+}

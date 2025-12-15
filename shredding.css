@@ -1,0 +1,333 @@
+/* Base Styles */
+.enrichment-shredding {
+    width: 100%;
+    background: #E0E0D2;
+    padding: 5rem 0 0;
+}
+
+.enrichment-shredding-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.enrichment-shredding-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.enrichment-shredding-title h2 {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.enrichment-shredding-title span {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.enrichment-shredding-container {
+    width: 75%;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 7rem;
+}
+
+.enrichment-shredding-img-container {
+    position: relative;
+    width: 75%;
+}
+
+.enrichment-shredding-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.enrichment-shredding-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.enrichment-shredding-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.enrichment-shredding-img-container:hover .enrichment-shredding-img::before {
+    animation: shineIn 0.6s forwards;
+}
+
+@keyframes shineIn {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
+}
+
+.enrichment-shredding-label {
+    position: absolute;
+    top: 50%;
+    left: -10rem;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.enrichment-shredding-img-container:hover .enrichment-shredding-label p {
+    opacity: 1;
+    max-height: 200px;
+    pointer-events: auto;
+}
+
+.enrichment-shredding-img-container:hover .enrichment-shredding-label {
+    transform: translate(5rem, -50%);
+}
+
+.enrichment-shredding-content {
+    width: 60%;
+    margin-top: 1.5rem;
+}
+
+.enrichment-shredding-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.enrichment-shredding-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 80%;
+}
+
+
+@media (max-width: 1200px) {
+    .enrichment-shredding {
+        padding: 4rem 0;
+    }
+
+    .enrichment-shredding-wrapper {
+        width: 90%;
+    }
+
+    .enrichment-shredding-title h2 {
+        font-size: 52px;
+    }
+
+    .enrichment-shredding-title span {
+        font-size: 26px;
+    }
+
+    .enrichment-shredding-container {
+        width: 85%;
+        gap: 5rem;
+    }
+
+    .enrichment-shredding-label {
+        left: -8rem;
+    }
+
+    .enrichment-shredding-img-container:hover .enrichment-shredding-label {
+        transform: translate(4rem, -50%);
+    }
+
+    .enrichment-shredding-content p {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .enrichment-shredding {
+        padding: 3.5rem 0;
+    }
+
+    .enrichment-shredding-title h2 {
+        font-size: 46px;
+    }
+
+    .enrichment-shredding-title span {
+        font-size: 24px;
+    }
+
+    .enrichment-shredding-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin: 2.5rem auto;
+    }
+
+    .enrichment-shredding-img-container {
+        width: 70%;
+    }
+
+    .enrichment-shredding-label {
+        left: -6rem;
+    }
+
+    .enrichment-shredding-img-container:hover .enrichment-shredding-label {
+        transform: translate(3rem, -50%);
+    }
+
+    .enrichment-shredding-content {
+        width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .enrichment-shredding-content p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .enrichment-shredding {
+        padding: 3rem 0;
+    }
+
+    .enrichment-shredding-wrapper {
+        width: 90%;
+    }
+
+    .enrichment-shredding-title {
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+
+    .enrichment-shredding-title h2 {
+        font-size: 40px;
+    }
+
+    .enrichment-shredding-title span {
+        font-size: 22px;
+    }
+
+    .enrichment-shredding-container {
+        gap: 2.5rem;
+        margin: 2rem auto;
+    }
+
+    .enrichment-shredding-img-container {
+        width: 80%;
+    }
+
+    .enrichment-shredding-label {
+        left: auto;
+        right: -2rem;
+        top: auto;
+        bottom: 1rem;
+        transform: translateY(0);
+    }
+
+    .enrichment-shredding-img-container:hover .enrichment-shredding-label {
+        transform: translate(-1rem, 0);
+    }
+
+    .enrichment-shredding-content h3 {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .enrichment-shredding-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .enrichment-shredding {
+        padding: 2.5rem 0;
+    }
+
+    .enrichment-shredding-wrapper {
+        width: 92%;
+    }
+
+    .enrichment-shredding-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .enrichment-shredding-title h2 {
+        font-size: 34px;
+    }
+
+    .enrichment-shredding-title span {
+        font-size: 20px;
+    }
+
+    .enrichment-shredding-container {
+        gap: 2rem;
+        margin: 1.5rem auto;
+    }
+
+    .enrichment-shredding-img-container {
+        width: 100%;
+    }
+
+    .enrichment-shredding-label {
+        right: 0;
+        bottom: 0.5rem;
+    }
+
+    .enrichment-shredding-img-container:hover .enrichment-shredding-label {
+        transform: translate(-0.5rem, 0);
+    }
+
+    .enrichment-shredding-content {
+        text-align: left;
+    }
+
+    .enrichment-shredding-content h3 {
+        font-size: 18px;
+    }
+
+    .enrichment-shredding-content p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .enrichment-shredding {
+        padding: 2rem 0;
+    }
+
+    .enrichment-shredding-title h2 {
+        font-size: 28px;
+    }
+
+    .enrichment-shredding-title span {
+        font-size: 18px;
+    }
+
+    .enrichment-shredding-content h3 {
+        font-size: 16px;
+    }
+
+    .enrichment-shredding-content p {
+        font-size: 14px;
+    }
+
+    .enrichment-shredding-label {
+        padding: 4px 8px;
+    }
+}

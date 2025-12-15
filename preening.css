@@ -1,0 +1,333 @@
+/* Base Styles */
+.enrichment-preening {
+    width: 100%;
+}
+
+.enrichment-preening-wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 5rem 0 0;
+}
+
+.enrichment-preening-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.enrichment-preening-content {
+    width: 50%;
+}
+
+.enrichment-preening-content h2 {
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.enrichment-preening-content h4 {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.enrichment-preening-content p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 80%;
+}
+
+.enrichment-preening-img-container {
+    position: relative;
+    width: 45%;
+}
+
+.enrichment-preening-img {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.enrichment-preening-img img {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.enrichment-preening-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.enrichment-preening-img:hover::before {
+    animation: shineIn 0.6s forwards;
+}
+
+@keyframes shineIn {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
+}
+
+.enrichment-preening-img:hover img {
+    transform: scale(1.02);
+}
+
+.enrichment-preening-label {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: -1.7rem;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label {
+    transform: translateX(0.5rem);
+}
+
+.enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label p {
+    opacity: 1;
+    max-height: 200px;
+}
+
+@media (max-width: 1200px) {
+    .enrichment-preening-wrapper {
+        width: 90%;
+        padding: 4rem 0 0;
+    }
+
+    .enrichment-preening-container {
+        margin-bottom: 4rem;
+    }
+
+    .enrichment-preening-content h2 {
+        font-size: 52px;
+        margin-bottom: 1.5rem;
+    }
+
+    .enrichment-preening-content h4 {
+        font-size: 22px;
+    }
+
+    .enrichment-preening-content p {
+        width: 90%;
+    }
+
+    .enrichment-preening-img img {
+        max-width: 280px;
+    }
+
+    .enrichment-preening-label {
+        left: -2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .enrichment-preening-wrapper {
+        padding: 3.5rem 0 0;
+    }
+
+    .enrichment-preening-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .enrichment-preening-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .enrichment-preening-content h2 {
+        font-size: 46px;
+    }
+
+    .enrichment-preening-content h4 {
+        font-size: 20px;
+    }
+
+    .enrichment-preening-content p {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .enrichment-preening-img-container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .enrichment-preening-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .enrichment-preening-img img {
+        max-width: 300px;
+    }
+
+    .enrichment-preening-label {
+        left: 5rem;
+    }
+
+    .enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .enrichment-preening-wrapper {
+        width: 90%;
+        padding: 3rem 0 0;
+    }
+
+    .enrichment-preening-container {
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .enrichment-preening-content h2 {
+        font-size: 40px;
+        margin-bottom: 1.2rem;
+    }
+
+    .enrichment-preening-content h4 {
+        font-size: 18px;
+    }
+
+    .enrichment-preening-content p {
+        font-size: 16px;
+    }
+
+    .enrichment-preening-img-container {
+        width: 70%;
+    }
+
+    .enrichment-preening-img img {
+        max-width: 260px;
+    }
+
+    /* Keep centered */
+    .enrichment-preening-label {
+        top: calc(100% + 0.3rem);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    .enrichment-preening-wrapper {
+        width: 92%;
+        padding: 2.5rem 0 0;
+    }
+
+    .enrichment-preening-container {
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .enrichment-preening-content {
+        text-align: left;
+    }
+
+    .enrichment-preening-content h2 {
+        font-size: 34px;
+        margin-bottom: 1rem;
+    }
+
+    .enrichment-preening-content h4 {
+        font-size: 16px;
+    }
+
+    .enrichment-preening-content p {
+        font-size: 15px;
+    }
+
+    .enrichment-preening-img-container {
+        width: 85%;
+        align-items: flex-start;
+    }
+
+    .enrichment-preening-img {
+        justify-content: flex-start;
+    }
+
+    .enrichment-preening-img img {
+        max-width: 100%;
+    }
+
+    .enrichment-preening-label {
+        left: -2rem;
+        transform: translateX(0);
+    }
+
+    .enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label {
+        transform: translateX(0.3rem);
+    }
+}
+
+@media (max-width: 400px) {
+    .enrichment-preening-wrapper {
+        padding: 2rem 0 0;
+    }
+
+    .enrichment-preening-container {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .enrichment-preening-content h2 {
+        font-size: 28px;
+    }
+
+    .enrichment-preening-content h4 {
+        font-size: 15px;
+    }
+
+    .enrichment-preening-content p {
+        font-size: 14px;
+    }
+
+    .enrichment-preening-img-container {
+        width: 100%;
+    }
+
+    .enrichment-preening-label {
+        top: calc(100% + 0.2rem);
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .enrichment-preening-img-container:has(.enrichment-preening-img:hover) .enrichment-preening-label {
+        transform: translateX(0.3rem);
+    }
+}
